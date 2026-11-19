@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap");
+
+* { box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    color: #242720;
+    background: #efede5;
+    font-family: "DM Sans", sans-serif;
+}
+
+.intro-sheet {
+    width: min(100%, 780px);
+    padding: clamp(32px, 8vw, 78px);
+    border-block: 1px solid #242720;
+}
+
+.eyebrow {
+    margin: 0 0 18px;
+    color: #49624e;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 620px;
+    margin: 0;
+    font: 400 clamp(3rem, 9vw, 6rem)/.95 "Instrument Serif", serif;
+    letter-spacing: -.035em;
+}
+
+.note { margin: 19px 0 34px; color: #71736c; }
+
+button {
+    min-width: 112px;
+    min-height: 46px;
+    padding: 0 16px;
+    border: 1px solid #385b49;
+    border-radius: 0;
+    background: #385b49;
+    color: #fff;
+    cursor: pointer;
+    font: 600 .82rem "DM Sans", sans-serif;
+    transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover { background: #294536; transform: translateY(-1px); }
+button:focus-visible { outline: 2px solid #8eaa9a; outline-offset: 3px; }
