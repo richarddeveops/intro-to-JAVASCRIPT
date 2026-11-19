@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Fira+Sans:wght@400;500;600;700&display=swap");
 
 * { box-sizing: border-box; }
 
@@ -8,20 +8,26 @@ body {
     display: grid;
     place-items: center;
     padding: 24px;
-    color: #242720;
-    background: #efede5;
-    font-family: "DM Sans", sans-serif;
+    color: #25303a;
+    background: #dfe3e8;
+    font-family: "Fira Sans", sans-serif;
 }
 
 .intro-sheet {
-    width: min(100%, 780px);
+    width: min(100%, 1050px);
+    min-height: 440px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px;
+    align-content: center;
+    gap: 0 42px;
     padding: clamp(32px, 8vw, 78px);
-    border-block: 1px solid #242720;
+    border-left: 1px solid #9faab5;
+    background: #edf0f3;
 }
 
 .eyebrow {
     margin: 0 0 18px;
-    color: #49624e;
+    color: #a5443b;
     font-size: .68rem;
     font-weight: 700;
     letter-spacing: .14em;
@@ -29,26 +35,45 @@ body {
 }
 
 h1 {
+    grid-column: 1 / -1;
     max-width: 620px;
     margin: 0;
-    font: 400 clamp(3rem, 9vw, 6rem)/.95 "Instrument Serif", serif;
-    letter-spacing: -.035em;
+    font: 500 clamp(3rem, 8vw, 5.7rem)/.98 "Source Serif 4", serif;
+    letter-spacing: -.05em;
 }
 
-.note { margin: 19px 0 34px; color: #71736c; }
+.note {
+    grid-column: 1;
+    margin: 19px 0 34px;
+    color: #596774;
+}
 
 button {
     min-width: 112px;
     min-height: 46px;
     padding: 0 16px;
-    border: 1px solid #385b49;
-    border-radius: 0;
-    background: #385b49;
+    border: 1px solid #a5443b;
+    border-radius: 2px;
+    background: #a5443b;
     color: #fff;
     cursor: pointer;
-    font: 600 .82rem "DM Sans", sans-serif;
+    font: 600 .82rem "Fira Sans", sans-serif;
     transition: background 150ms ease, transform 150ms ease;
 }
 
-button:hover { background: #294536; transform: translateY(-1px); }
-button:focus-visible { outline: 2px solid #8eaa9a; outline-offset: 3px; }
+button:hover { background: #82362f; transform: translateY(-1px); }
+button:focus-visible { outline: 2px solid #a5443b; outline-offset: 3px; }
+
+.intro-sheet::after {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+    align-self: stretch;
+    border-left: 1px solid #bdc4ca;
+    background: repeating-linear-gradient(to bottom, transparent 0 22px, #cdd3d8 22px 23px);
+    content: "";
+}
+
+@media (max-width: 620px) {
+    .intro-sheet { grid-template-columns: 1fr; }
+    .intro-sheet::after { display: none; }
+}
